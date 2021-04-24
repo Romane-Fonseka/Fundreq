@@ -19,7 +19,7 @@ import javax.ws.rs.Produces;
 @path("/Fund_req")
 public class Fund_req {
 	
-	Fund_req fundobj = new Fund_req();
+	
 	
 	String UserID;
 	String UserName;
@@ -42,7 +42,8 @@ public class Fund_req {
 	public String insertFundReq(String Fundreq) {
 		
 		//Convert the input string to a JSON object
-				JsonObject fundobj = new JsonParser().parse(Fundreq).getAsJsonObject();
+		JsonObject fundobj = new JsonParser().parse(Fundreq).getAsJsonObject();
+		
 				//Read the values from the JSON object
 			 
 				String rName = fundobj.insertFundReq("ResercherName").toString();
@@ -96,7 +97,7 @@ public class Fund_req {
 		JsonObject fundobj = new JsonParser().parse(Fundreq).getAsJsonObject();
 		//Read the values from the JSON object
 	 
-		Integer PayUserID = fundobj.get("UserID").getAsInt();
+		Integer UserID = fundobj.get("UserID").getAsInt();
 	 
 		String output = fundobj.insertFundReq(UserID);
 	 

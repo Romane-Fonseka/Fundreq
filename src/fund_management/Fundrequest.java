@@ -114,7 +114,7 @@ public class Fundrequest {
 	 
 		 // iterate through the rows in the result set
 		 while (rs.next())
-		 {//String PayID = Integer.toString(rs.getInt("PayID"));
+		 {
 			 String rname = rs.getString("ResercherName");
 			 String fundingC = rs.getString("FundingCompany");
 			 String project = rs.getString("ProjectName");
