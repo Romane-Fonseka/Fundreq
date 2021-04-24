@@ -3,6 +3,9 @@
  */
 package fund_management;
 
+import java.awt.PageAttributes.MediaType;
+import java.util.UUID;
+
 import javax.print.attribute.standard.Media;
 import javax.print.attribute.standard.MediaName;
 import javax.print.attribute.standard.MediaSize;
@@ -17,6 +20,11 @@ import javax.ws.rs.Produces;
 public class Fund_req {
 	
 	Fund_req fundobj = new Fund_req();
+	
+	String UserID;
+	String UserName;
+	String Password;
+	
 	
 	@GET
 	@Path("/")
@@ -45,7 +53,7 @@ public class Fund_req {
 				String address = fundobj.insertFundReq("Address").toString();
 				String AccNo = fundobj.insertFundReq("AccountNo").toString();
 			 
-				String output = fundobj.insertPayment(rName, fundingC, project, email, Phone, address, AccNo);
+				String output = fundobj.insertFundReq(rName, fundingC, project, email, Phone, address, AccNo);
 			 
 				return output;
 				
@@ -61,7 +69,8 @@ public class Fund_req {
 		//Convert the input string to a JSON object
 		JsonObject fundobj = new JsonParser().parse(Fundreq).getAsJsonObject();
 		//Read the values from the JSON object
-	 
+		
+		
 		String rName = fundobj.insertFundReq("ResercherName").toString();
 		String fundingC = fundobj.insertFundReq("FundingVompany").toString();
 		String project = fundobj.insertFundReq("ProjectName").toString();
@@ -70,7 +79,7 @@ public class Fund_req {
 		String address = fundobj.insertFundReq("Address").toString();
 		String AccNo = fundobj.insertFundReq("AccountNo").toString();
 	 
-		String output = fundobj.insertPayment(rName, fundingC, project, email, Phone, address, AccNo);
+		String output = fundobj.insertFundReq(rName, fundingC, project, email, Phone, address, AccNo);
 	 
 		return output;
 		
@@ -87,18 +96,12 @@ public class Fund_req {
 		JsonObject fundobj = new JsonParser().parse(Fundreq).getAsJsonObject();
 		//Read the values from the JSON object
 	 
-		Integer PayID = fundobj.get("PayID").getAsInt();
+		Integer PayUserID = fundobj.get("UserID").getAsInt();
 	 
-		String output = fundobj.deletePayment(PayID);
+		String output = fundobj.insertFundReq(UserID);
 	 
 		return output;
 	
 	}
 	
-	
-	
-	
-	
-	
-
 }
