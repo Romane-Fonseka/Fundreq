@@ -72,7 +72,7 @@ public class Fund_req {
 		
 		
 		String rName = fundobj.insertFundReq("ResercherName").toString();
-		String fundingC = fundobj.insertFundReq("FundingVompany").toString();
+		String fundingC = fundobj.insertFundReq("FundingCompany").toString();
 		String project = fundobj.insertFundReq("ProjectName").toString();
 		String email = fundobj.insertFundReq("Email").toString();
 		String Phone = fundobj.insertFundReq("ContactNo").toString();
